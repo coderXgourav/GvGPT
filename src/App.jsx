@@ -279,13 +279,13 @@ function App() {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer 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",
-          "HTTP-Referer": "https://gvgpt.vercel.app/", 
+          "Authorization": `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+          "HTTP-Referer": "https://gv-gpt.vercel.app/", 
           "X-Title": "GVGPT", 
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          "model": "google/gemini-flash-1.5-8b-exp",
+          "model": "google/gemma-2-9b-it:free",
           "messages": [
             {
               "role": "user",
